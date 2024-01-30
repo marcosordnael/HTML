@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Par ou Ímpar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 300px; /* Defina a altura mínima desejada */
+            width: 300px; /* Defina a largura desejada */
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .loading-icon {
+            display: none;
+            animation: spin 2s linear infinite;
+            margin-bottom: 10px; /* Espaçamento inferior para separar o ícone do resultado */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #resultado {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function verificarParOuImpar() {
+            var num = document.getElementById('numero').value;
+            var resultado = document.getElementById('resultado');
+            var loadingIcon = document.querySelector('.loading-icon');
+
+            // Verifica se um número foi digitado
+            if (isNaN(num) || num === "") {
+                resultado.textContent = 'Por favor, digite um número válido.';
+                resultado.style.display = 'block';
+                loadingIcon.style.display = 'none';
+                return;
+            }
+            
+            // Mostra o ícone de carregamento e esconde o resultado
+            loadingIcon.style.display = 'inline';
+            resultado.style.display = 'none';
+
+            // Espera 3 segundos antes de exibir o resultado
+            setTimeout(function() {
+                if (num % 2 == 0) {
+                    resultado.textContent = 'O número ' + num + ' é PAR';
+                } else {
+                    resultado.textContent = 'O número ' + num + ' é ÍMPAR';
+                }
+
+                // Esconde o ícone de carregamento e exibe o resultado
+                loadingIcon.style.display = 'none';
+                resultado.style.display = 'block';
+            }, 3000); // 3000 milissegundos = 3 segundos
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de Par ou Ímpar</h1>
+        <label for="numero">Digite um número:</label>
+        <input type="text" id="numero">
+        <i class="fas fa-spinner loading-icon"></i>
+        
+        <button onclick="verificarParOuImpar()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+</body>
+</html>

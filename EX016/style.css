@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #F1D8c9, #F2C3A3, #f1abdc);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #926685ce;
+    max-width: 80%; /* Define um valor máximo relativo à largura total da tela */
+    margin: 10px auto; /* Centraliza o elemento e define margens superior e inferior para 10px */
+    padding: 20px;
+}
+
+h1 {
+    color: rgb(196, 143, 31);
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(95, 94, 13);
+    margin: 5px;
+}
+
+h2 {
+    color: rgb(189, 173, 173);
+    text-shadow: 2px 2px 2px rgb(131, 119, 119);
+    margin: 5px;
+    margin-top: 15px;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+    margin: 5px;
+}
+
+/* Adiciona uma media query para telas menores */
+@media only screen and (max-width: 600px) {
+    main {
+        max-width: 80%;
+    }
+}

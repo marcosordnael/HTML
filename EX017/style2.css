@@ -1,0 +1,55 @@
+
+
+            @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+            @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+
+            @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+            @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+            body{
+                background-image: linear-gradient(to bottom, #1720FD, #1453E3, #239DFA, #14C0E3, #17FDE6, rgb(189, 174, 174)); 
+                background-attachment: fixed;
+            }
+            main{
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 10px 10px 10px #926685ce;
+                max-width: 80%; /* Define um valor máximo relativo à largura total da tela */
+                margin: 10px auto; /* Centraliza o elemento e define margens superior e inferior para 10px */
+                padding: 20px;
+            }
+            h1{
+                font-family: 'MedievalSharp', cursive;
+                font-size: 3em;
+            }
+
+            h2{
+                font-family: 'Fredericka the Great', serif;
+                font-weight: normal;
+
+            }
+
+            
+            p#nome {
+                font-family: 'Ephesis', cursive;
+                text-align: right;
+                margin-inline-end: 40px;
+                margin-bottom: 1px;
+                line-height: 16px; /* Defina a altura da linha igual ao tamanho desejado da imagem */
+            }
+    
+            h3{
+                font-family: 'Times New Roman', Times, serif;
+                text-align: right;
+                margin-inline-end: 10px;
+                margin-top: 1px;
+                
+                
+            }
+
+        
+
+            
+            

@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(49, 50, 51);
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin-top: auto;
+    line-height: 1.5;
+    color: hsl(0, 7%, 97%);
+    font-size: 40px;
+  }
+
+  p{
+    color: white;
+    transition: .2s;
+  }
+  
+  .imagens img {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  p:hover{
+    transform: scale(1.2);
+
+  }
+  
+  .imagens img:hover {
+    transform: scale(1.2);
+  }
+
+  img{
+    transition: .2s;
+    
+  }
+
+  img:hover{
+    transform: scale(1.2);
+  }
+  

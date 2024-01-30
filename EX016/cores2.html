@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente em CSS</title>
+    <style>
+        
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            /* Degrade em circulo */
+            /* background-image: radial-gradient(circle, #1720FD, #1453E3, #239DFA, #14C0E3, #17FDE6, rgb(189, 174, 174)); */
+
+            /* Degrade de cima para baixo */
+             background-image: linear-gradient(to bottom, #1720FD, #1453E3, #239DFA, #14C0E3, #17FDE6, rgb(189, 174, 174)); 
+
+            /* Degrade em grau 
+            background-image: linear-gradient(45deg, #1720FD, #1453E3, #239DFA, #14C0E3, #17FDE6, rgb(189, 174, 174)); */
+
+            /* Degrade da esquerda para a direita */
+            /* background-image: linear-gradient(to right, #1720FD, #1453E3, #239DFA, #14C0E3, #17FDE6, rgb(189, 174, 174));*/
+            background-attachment: fixed; 
+            font-family: cursive;
+        }
+        h1 {
+            color: rgb(196, 143, 31);
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(95, 94, 13);
+            margin: 5px;
+        }
+
+        h2 {
+            color: rgb(189, 173, 173);
+            text-shadow: 2px 2px 2px rgb(131, 119, 119);
+            margin: 5px;
+            margin-top: 15px;
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+            text-align: justify;
+            margin-bottom: 15px;
+            margin: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px #926685ce;
+            max-width: 80%; /* Define um valor máximo relativo à largura total da tela */
+            margin: 10px auto; /* Centraliza o elemento e define margens superior e inferior para 10px */
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Testando Gradiente</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos hic officia nihil. Aliquam, tempora cupiditate, eligendi corporis beatae sed corrupti a inventore porro fugit dolore earum perferendis esse possimus veritatis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis amet veniam voluptatem odit, soluta id sunt, praesentium, dolorem hic expedita exercitationem alias saepe omnis aperiam debitis quaerat quas maiores incidunt!</p>
+        <h1>Testando</h1>
+        <img src="../EX015/imagens/EuCirculo.jpg" alt="">
+    </main>
+
+    
+</body>
+</html>

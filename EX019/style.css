@@ -1,0 +1,13 @@
+div {
+    display: inline-block;
+    background-color: darkgray;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+}
+div:hover {
+    background-color: blueviolet;
+    transition: 3s;
+}

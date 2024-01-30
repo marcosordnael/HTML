@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+}
+
+h1{
+  text-align: center;
+  margin-top: auto;
+  line-height: 1.5;
+}
+
+.menu {
+  list-style-type: square; /* Mantém os marcadores (demarcadores) */
+  background-color: rgb(253, 250, 250);
+  border-radius: 5px;
+  
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px 10px;
+  cursor: pointer;
+  
+}
+
+.menu li:hover {
+  background-color: #646060;
+  color: blue;
+}

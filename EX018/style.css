@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+    background-image: linear-gradient(aqua, blue, blueviolet);
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1#titulo {
+    color: #d49b45;
+    font-size: 3em;
+    text-align: center;
+    background-color: #f7fcfc;
+    border-radius: 15px;
+    padding: 10px;
+    
+}
+h1 {
+    color: blue;
+}
+h2 {
+    color: blueviolet;
+}
+.basico {
+    color: green;
+
+}
+.intermediario {
+    color: yellow;
+
+}
+.avançado {
+    color: red;
+}
+.destaque {
+    background-color: chocolate;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 20px;
+    text-align: center;
+}
