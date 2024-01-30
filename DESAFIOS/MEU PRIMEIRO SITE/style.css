@@ -85,7 +85,7 @@ header {
     padding-top: 60px;
 }
 
-header > h1 {
+header > h1, h2 {
     color: white;
     font-family: var(--fonte-destaque);
     font-size: 3em;
