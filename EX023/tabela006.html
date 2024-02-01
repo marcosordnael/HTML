@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        h3 {
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+
+        }
+        th,td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        /* overflow-x é usado para uma rolagem horizontal, sendo exibido quando em tela menor
+        o overflow-y é para ser adicionado rolagem vertical quando exibido em tela menor
+        e o overflow é para ambos */
+        div#container {
+            overflow-x: auto;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Tabelas em telas pequenas</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laboriosam, autem ad asperiores sint nobis obcaecati ex molestias, vero cum quod nam, saepe atque repudiandae sit voluptates eum eos ducimus!</p>
+
+    <h3>Tabelas Responsívas</h3>
+
+    <div id="container">
+        <table>
+            
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>JAN</th>
+                    <th>FEV</th>
+                    <th>MAR</th>
+                    <th>ABR</th>
+                    <th>MAI</th>
+                    <th>JUN</th>
+                    <th>JUL</th>
+                    <th>AGO</th>
+                    <th>SET</th>
+                    <th>OUT</th>
+                    <th>NOV</th>
+                    <th>DEZ</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+</body>
+</html>
