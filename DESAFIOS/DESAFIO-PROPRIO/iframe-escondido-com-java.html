@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste com iframe</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            
+            z-index: 1;
+            overflow: hidden;
+            background-color: white;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: none; /* Inicialmente escondido */
+            
+
+        }
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            
+        }
+        #fecharBotao {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 3;
+        }
+    </style>
+    <script>
+        function exibirIframe() {
+            var overlay = document.getElementById('overlay');
+            var iframe = document.getElementById('meuIframe');
+            var botaoFechar = document.getElementById('fecharBotao');
+
+            overlay.style.display = 'block';
+            iframe.style.display = 'block';
+            botaoFechar.style.display = 'block';
+        }
+
+        function fecharIframe() {
+            var overlay = document.getElementById('overlay');
+            var iframe = document.getElementById('meuIframe');
+            var botaoFechar = document.getElementById('fecharBotao');
+
+            overlay.style.display = 'none';
+            iframe.style.display = 'none';
+            botaoFechar.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>Teste com iframe</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio soluta, vitae alias nisi quo doloremque temporibus consequatur libero magni optio cumque! Exercitationem rem saepe aspernatur facere deserunt explicabo labore cumque?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim voluptate ratione aliquid qui mollitia iure veniam. Voluptates perferendis culpa eum repudiandae eos! Quibusdam hic quasi labore pariatur, eligendi quisquam.
+    </p>
+    <a href="javascript:void(0);" onclick="exibirIframe()">Mostrar iframe</a>
+    <div id="overlay" class="overlay">
+        <button id="fecharBotao" onclick="fecharIframe()">X</button>
+        <iframe id="meuIframe" src="pag001.html" frameborder="0"></iframe>
+    </div>
+</body>
+</html>
