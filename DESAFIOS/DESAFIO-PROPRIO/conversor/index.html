@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+</head>
+<body>
+    <h1>Conversor</h1>
+    <div>
+        <label for="numero">Digite um número Binário</label>
+        <input type="text" name="numero" id="numero">
+        <input type="submit" value="Converter" onclick="converterBinarioParaDecimal()">
+    </div>
+    <div id="msg"></div>
+
+    <script>
+        function converterBinarioParaDecimal() {
+            const numeroBinario = document.getElementById("numero").value;
+
+            // Validar se o número é binário
+            if (!/^[01]+$/.test(numeroBinario)) {
+                document.getElementById("msg").innerHTML = "Número inválido. Digite apenas 0 e 1.";
+                return;
+            }
+
+            // Inverter a ordem do número binário
+            const numeroBinarioInvertido = numeroBinario.split("").reverse().join("");
+
+            // Converter cada dígito para decimal
+            const digitosDecimais = numeroBinarioInvertido.split("").map((digito) => {
+                return parseInt(digito, 2);
+            });
+
+            // Multiplicar cada dígito pelo seu peso (potência de 2)
+            const pesos = digitosDecimais.map((digito, indice) => {
+                return digito * Math.pow(2, indice);
+            });
+
+            // Somar os resultados para obter o valor decimal
+            const valorDecimal = pesos.reduce((soma, valor) => soma + valor, 0);
+
+            // Exibir o valor decimal
+            const mensagem = `O valor decimal do número binário ${numeroBinario} é ${valorDecimal}.`;
+            document.getElementById("msg").innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>
