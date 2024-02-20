@@ -4,12 +4,26 @@ function limparCampos() {
 }
 
 function converterNumero() {
-    const modoSelecionado = document.querySelector('input[name="tiponum"]:checked').id;
+    const modoSelecionado = document.querySelector('input[name="tiponum"]:checked');
+    const vazio = document.getElementById("numero").value;
+
+    if (!vazio) {
+        alert("Por favor, digite um número antes de converter.");
+        return;
+
+    }
+    
+    if (!modoSelecionado) {
+        alert("Por favor, escolha um modo de conversão.");
+        return;
+    }
+
+    const modoSelecionadoId = modoSelecionado.id;
     const numero = document.getElementById("numero").value;
 
     let resultado;
 
-    switch (modoSelecionado) {
+    switch (modoSelecionadoId) {
         case "decbin":
             resultado = decimalParaBinario(numero);
             break;
@@ -57,21 +71,21 @@ function decimalParaHexadecimal(numero) {
 }
 
 function hexadecimalParaDecimal(numero) {
-    // Splitting the input by comma to handle fractions
+    // Dividindo a entrada pelo caractere vírgula para lidar com frações
     const partes = numero.split(",");
     let parteInteira = partes[0];
-    let parteDecimal = partes[1] || ""; // If no decimal part, it defaults to empty string
+    let parteDecimal = partes[1] || ""; // Se não houver parte decimal, assume uma string vazia
 
-    // Converting integer part
+    // Convertendo a parte inteira
     parteInteira = parseInt(parteInteira, 16).toString(10);
 
-    // Converting decimal part
+    // Convertendo a parte decimal
     let decimal = 0;
     for (let i = 0; i < parteDecimal.length; i++) {
-        const digit = parseInt(parteDecimal[i], 16);
-        decimal += digit * Math.pow(16, -(i + 1));
+        const digito = parseInt(parteDecimal[i], 16);
+        decimal += digito * Math.pow(16, -(i + 1));
     }
-    parteDecimal = decimal.toFixed(8).toString().slice(2); // Fixing to 8 decimal places and removing "0." part
+    parteDecimal = decimal.toFixed(8).toString().slice(2); // Fixando em 8 casas decimais e removendo a parte "0."
 
     return parteInteira + (parteDecimal === "" ? "" : "." + parteDecimal);
 }
