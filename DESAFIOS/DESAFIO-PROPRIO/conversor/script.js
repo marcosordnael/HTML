@@ -44,6 +44,9 @@ function converterNumero() {
         case "hexbin":
             resultado = hexadecimalParaBinario(numero);
             break;
+        case "binhex":
+            resultado = binarioParaHexadecimal(numero);
+            break;
         case "binoct":
             resultado = binarioParaOctal(numero);
             break;
@@ -92,22 +95,22 @@ function hexadecimalParaBinario(numero) {
     return parseInt(numero, 16).toString(2);
 }
 
+function binarioParaHexadecimal(numero) {
+    return parseInt(numero, 2).toString(16).toUpperCase();
+}
+
 function binarioParaOctal(numero) {
-    const decimal = parseInt(numero, 2);
-    return decimal.toString(8);
+    return parseInt(numero, 2).toString(8);
 }
 
 function octalParaBinario(numero) {
-    const decimal = parseInt(numero, 8);
-    return decimal.toString(2);
+    return parseInt(numero, 8).toString(2);
 }
 
 function hexadecimalParaOctal(numero) {
-    const decimal = parseInt(numero, 16);
-    return decimal.toString(8);
+    return parseInt(numero, 16).toString(8);
 }
 
 function octalParaHexadecimal(numero) {
-    const decimal = parseInt(numero, 8);
-    return decimal.toString(16).toUpperCase();
+    return parseInt(numero, 8).toString(16).toUpperCase();
 }
