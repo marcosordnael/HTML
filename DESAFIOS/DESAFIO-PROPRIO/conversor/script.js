@@ -10,7 +10,6 @@ function converterNumero() {
     if (!vazio) {
         alert("Por favor, digite um número antes de converter.");
         return;
-
     }
     
     if (!modoSelecionado) {
@@ -42,6 +41,21 @@ function converterNumero() {
         case "hexdec":
             resultado = hexadecimalParaDecimal(numero);
             break;
+        case "hexbin":
+            resultado = hexadecimalParaBinario(numero);
+            break;
+        case "binoct":
+            resultado = binarioParaOctal(numero);
+            break;
+        case "octbin":
+            resultado = octalParaBinario(numero);
+            break;
+        case "hexoct":
+            resultado = hexadecimalParaOctal(numero);
+            break;
+        case "octhex":
+            resultado = octalParaHexadecimal(numero);
+            break;
         default:
             resultado = "Por favor, escolha um modo de conversão.";
     }
@@ -71,21 +85,29 @@ function decimalParaHexadecimal(numero) {
 }
 
 function hexadecimalParaDecimal(numero) {
-    // Dividindo a entrada pelo caractere vírgula para lidar com frações
-    const partes = numero.split(",");
-    let parteInteira = partes[0];
-    let parteDecimal = partes[1] || ""; // Se não houver parte decimal, assume uma string vazia
+    return parseInt(numero, 16).toString(10);
+}
 
-    // Convertendo a parte inteira
-    parteInteira = parseInt(parteInteira, 16).toString(10);
+function hexadecimalParaBinario(numero) {
+    return parseInt(numero, 16).toString(2);
+}
 
-    // Convertendo a parte decimal
-    let decimal = 0;
-    for (let i = 0; i < parteDecimal.length; i++) {
-        const digito = parseInt(parteDecimal[i], 16);
-        decimal += digito * Math.pow(16, -(i + 1));
-    }
-    parteDecimal = decimal.toFixed(8).toString().slice(2); // Fixando em 8 casas decimais e removendo a parte "0."
+function binarioParaOctal(numero) {
+    const decimal = parseInt(numero, 2);
+    return decimal.toString(8);
+}
 
-    return parteInteira + (parteDecimal === "" ? "" : "." + parteDecimal);
+function octalParaBinario(numero) {
+    const decimal = parseInt(numero, 8);
+    return decimal.toString(2);
+}
+
+function hexadecimalParaOctal(numero) {
+    const decimal = parseInt(numero, 16);
+    return decimal.toString(8);
+}
+
+function octalParaHexadecimal(numero) {
+    const decimal = parseInt(numero, 8);
+    return decimal.toString(16).toUpperCase();
 }
