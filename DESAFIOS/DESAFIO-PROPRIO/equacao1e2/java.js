@@ -77,6 +77,7 @@ function resolverEquacaoSegundoGrau(equacao) {
 }
 
 function extrairCoeficientes(equacao) {
+    // Remover espaços em branco e dividir a equação em termos
     const termos = equacao.replace(/\s/g, "").split(/(?=[+-])/);
 
     // Inicializar coeficientes
@@ -88,10 +89,22 @@ function extrairCoeficientes(equacao) {
     for (let termo of termos) {
         if (termo.includes("x^2")) {
             // Coeficiente do termo quadrático (ax^2)
-            a += parseInt(termo);
+            if (termo === "x^2") {
+                a += 1;
+            } else if (termo === "-x^2") {
+                a -= 1;
+            } else {
+                a += parseInt(termo);
+            }
         } else if (termo.includes("x")) {
             // Coeficiente do termo linear (bx)
-            b += parseInt(termo);
+            if (termo === "x" || termo === "+x") {
+                b += 1;
+            } else if (termo === "-x") {
+                b -= 1;
+            } else {
+                b += parseInt(termo);
+            }
         } else {
             // Termo constante (c)
             c += parseInt(termo);
@@ -100,6 +113,8 @@ function extrairCoeficientes(equacao) {
 
     return { a, b, c };
 }
+
+
 
 function calcularDiscriminante(a, b, c) {
     return Math.pow(b, 2) - 4 * a * c;
