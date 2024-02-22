@@ -70,13 +70,13 @@ input[type="submit"]:hover {
 /* Media queries para tornar o site responsivo */
 @media (max-width: 768px) {
     #conteudo {
-        width: 80%; /* Ajusta a largura do conteúdo para telas menores */
+        width: 70%; /* Ajusta a largura do conteúdo para telas menores */
     }
 }
 
 @media (max-width: 600px) {
     #conteudo {
-        width: 90%; /* Ajusta a largura do conteúdo para telas ainda menores */
+        width: 70%; /* Ajusta a largura do conteúdo para telas ainda menores */
     }
 
     /* Defina o tamanho da fonte menor para telas de celular */
@@ -87,9 +87,9 @@ input[type="submit"]:hover {
 
 @media (max-width: 480px) {
     #conteudo {
-        width: 95%; /* Ajusta a largura do conteúdo para telas muito pequenas */
+        width: 75%; /* Ajusta a largura do conteúdo para telas muito pequenas */
     }
-    
+
     /* Defina o tamanho da fonte menor para telas de celular */
     body {
         font-size: 14px; /* Por exemplo, ajuste o tamanho da fonte para 14px */
