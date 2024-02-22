@@ -1,48 +1,58 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
     background-color: #f2f2f2;
+    background-image: url(imagens/thumb-Matrix.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
     margin: 0;
     padding: 0;
 }
+
 #conteudo {
-    background-color: white;
-    width: 80vw;
-    margin: auto;
+    background-color: rgba(255, 255, 255, 0.082);
+    width: 50%;
+    height: 100%;
+    margin: 30px auto; 
     padding: 20px;
+    border-radius: 15px;
 }
 
 h1 {
-    color: #333;
+    color: white;
     text-align: center;
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1em;
+}
+#digitar{
+    margin-top: 20px;
 }
 
-div {
-    margin-bottom: 20px;
-}
 
-label:hover{
+
+label:hover {
     background-color: #6a9bcca9;
     padding: 5px;
     border-radius: 8px;
-    
 }
 
 input[type="text"],
 input[type="submit"],
 input[type="radio"] {
-    padding: 10px;
+    padding: 5px;
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
-
 
 input[type="submit"] {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
-    
 }
 
 input[type="submit"]:hover {
@@ -57,4 +67,3 @@ input[type="submit"]:hover {
     color: #000000;
     font-weight: bold;
 }
-
