@@ -77,12 +77,14 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
     #conteudo {
         width: 70%; /* Ajusta a largura do conteúdo para telas menores */
+        height: 80%; /* Ajusta a altura do conteúdo para telas muito pequenas */
     }
 }
 
 @media (max-width: 600px) {
     #conteudo {
         width: 70%; /* Ajusta a largura do conteúdo para telas ainda menores */
+        height: 80%; /* Ajusta a altura do conteúdo para telas muito pequenas */
     }
 
     /* Defina o tamanho da fonte menor para telas de celular */
@@ -94,6 +96,7 @@ input[type="submit"]:hover {
 @media (max-width: 480px) {
     #conteudo {
         width: 75%; /* Ajusta a largura do conteúdo para telas muito pequenas */
+        height: 80%; /* Ajusta a altura do conteúdo para telas muito pequenas */
     }
 
     /* Defina o tamanho da fonte menor para telas de celular */
