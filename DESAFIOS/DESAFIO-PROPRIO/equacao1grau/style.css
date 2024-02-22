@@ -1,16 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-    margin: 0;
+    margin: 20px;
     padding: 0;
 }
 #conteudo {
     background-color: white;
-    width: 60vw;
+    width: 80vw;
     margin: auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 1px 1px  7px rgba(0, 0, 0, 0.479);
 }
 
 h1 {
@@ -22,7 +20,10 @@ div {
     margin-bottom: 20px;
 }
 
-
+label {
+    
+    
+}
 
 input[type="text"],
 input[type="submit"],
@@ -44,8 +45,6 @@ input[type="submit"]:hover {
 }
 
 #resultado {
-    width: auto;
-    height: auto;
     padding: 10px;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;

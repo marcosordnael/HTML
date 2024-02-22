@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Resolvendo Equações</h1>
-    <div>
-        <h3>Escolha o tipo de equação:</h3>
-        <input type="radio" name="tipoequacao" id="primeirograu" value="primeirograu" checked onchange="atualizarPlaceholder()">
-        <label for="primeirograu">Equação de 1º grau (ax + b = c)</label><br>
-        <input type="radio" name="tipoequacao" id="segundograu" value="segundograu" onchange="atualizarPlaceholder()">
-        <label for="segundograu">Equação de 2º grau (ax² + bx + c = 0)</label><br>
+    <div id="conteudo">
+        <h1>Resolvendo Equações</h1>
+        <div >
+            <h3>Escolha o tipo de equação:</h3>
+            <input type="radio" name="tipoequacao" id="primeirograu" value="primeirograu" checked onchange="atualizarPlaceholder()">
+            <label for="primeirograu">Equação de 1º grau (ax + b = c)</label><br>
+            <input type="radio" name="tipoequacao" id="segundograu" value="segundograu" onchange="atualizarPlaceholder()">
+            <label for="segundograu">Equação de 2º grau (ax² + bx + c = 0)</label><br>
+        </div>
+        <div>
+            <label for="equacao">Insira a equação:</label>
+            <input type="text" id="equacao" placeholder="Exemplo: 3x - 10 = 5">
+            <input type="submit" value="Resolver" onclick="resolverEquacao()">
+        </div>
+        <div id="resultado"></div>
     </div>
-    <div>
-        <label for="equacao">Insira a equação:</label>
-        <input type="text" id="equacao" placeholder="Exemplo: 3x - 10 = 5">
-        <input type="submit" value="Resolver" onclick="resolverEquacao()">
-    </div>
-    <div id="resultado"></div>
 
     <script src="java.js"></script>
 </body>
