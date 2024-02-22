@@ -1,62 +1,87 @@
+/* Definições gerais do corpo do documento */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    background-image: url(imagens/fundoequação.png);
-    
+    font-family: Arial, sans-serif; /* Define a família de fontes para todo o documento */
+    background-color: #f2f2f2; /* Define a cor de fundo para o corpo do documento */
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    background-image: url(imagens/fundoequação.png); /* Define uma imagem de fundo */
 }
+
+/* Estilos para o conteúdo principal */
 #conteudo {
-    background-color: white;
-    width: 60%;
-    height: 80%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 1px 1px  7px rgba(0, 0, 0, 0.479);
+    background-color: white; /* Define a cor de fundo do conteúdo principal */
+    width: 60%; /* Define a largura do conteúdo */
+    height: 80%; /* Define a altura do conteúdo */
+    margin-top: 20px; /* Define a margem superior */
+    margin-left: auto; /* Centraliza o conteúdo na horizontal */
+    margin-right: auto; /* Centraliza o conteúdo na horizontal */
+    padding: 20px; /* Adiciona preenchimento interno ao conteúdo */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.479); /* Adiciona uma sombra */
 }
 
+/* Estilos para o cabeçalho */
 h1 {
-    color: #333;
-    text-align: center;
+    color: #333; /* Define a cor do texto */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para as divisões */
 div {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Define a margem inferior */
 }
 
-
-
+/* Estilos para os inputs */
 input[type="text"],
 input[type="submit"],
 input[type="radio"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px; /* Adiciona preenchimento interno aos inputs */
+    margin-right: 10px; /* Define a margem à direita */
+    border: 1px solid #ccc; /* Adiciona uma borda sólida */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    width:auto; /* Faz os inputs ocuparem a largura total */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
 }
 
+/* Estilos para o botão de envio */
 input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
+    background-color: #007bff; /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
 }
 
+/* Estilos para o botão de envio ao passar o mouse */
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Define a cor de fundo ao passar o mouse */
 }
 
+/* Estilos para o resultado */
 #resultado {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
-    color: #000000;
-    font-weight: bold;
+    width: auto; /* Define a largura automática */
+    height: auto; /* Define a altura automática */
+    padding: 10px; /* Adiciona preenchimento interno */
+    background-color: #d4edda; /* Define a cor de fundo */
+    border: 1px solid #c3e6cb; /* Adiciona uma borda sólida */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    color: #000000; /* Define a cor do texto */
+    font-weight: bold; /* Define o peso da fonte */
 }
 
+/* Media queries para tornar o site responsivo */
+@media (max-width: 768px) {
+    #conteudo {
+        width: 80%; /* Ajusta a largura do conteúdo para telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    #conteudo {
+        width: 90%; /* Ajusta a largura do conteúdo para telas ainda menores */
+    }
+}
+
+@media (max-width: 480px) {
+    #conteudo {
+        width: 95%; /* Ajusta a largura do conteúdo para telas muito pequenas */
+    }
+}
