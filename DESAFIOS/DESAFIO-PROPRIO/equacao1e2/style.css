@@ -78,10 +78,20 @@ input[type="submit"]:hover {
     #conteudo {
         width: 90%; /* Ajusta a largura do conteúdo para telas ainda menores */
     }
+
+    /* Defina o tamanho da fonte menor para telas de celular */
+    body {
+        font-size: 14px; /* Por exemplo, ajuste o tamanho da fonte para 14px */
+    }
 }
 
 @media (max-width: 480px) {
     #conteudo {
         width: 95%; /* Ajusta a largura do conteúdo para telas muito pequenas */
+    }
+    
+    /* Defina o tamanho da fonte menor para telas de celular */
+    body {
+        font-size: 14px; /* Por exemplo, ajuste o tamanho da fonte para 14px */
     }
 }
