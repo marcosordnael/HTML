@@ -71,7 +71,9 @@ input[type="submit"]:hover {
     
     body {
         font-size: 16px; /* Por exemplo, ajuste o tamanho da fonte para 14px */
-        
+     
+        width: 100vw;
+        background-size: cover;
     }
     
 }
