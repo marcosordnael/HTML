@@ -69,7 +69,7 @@ input[type="submit"]:hover {
 }
 @media (max-width: 600px) {
     #conteudo {
-        width: 70%; /* Ajusta a largura do conteúdo para telas ainda menores */
+        width: 90%; /* Ajusta a largura do conteúdo para telas ainda menores */
         height: 80%; /* Ajusta a altura do conteúdo para telas muito pequenas */
     }
 
