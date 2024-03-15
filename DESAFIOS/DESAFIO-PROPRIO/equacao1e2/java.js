@@ -78,28 +78,37 @@ function atualizarPlaceholder() {
 
         function extrairCoeficientes(equacao) {
             const termos = equacao.replace(/\s/g, "").split(/(?=[+-])/);
-
+        
             // Inicializar coeficientes
             let a = 0;
             let b = 0;
             let c = 0;
-
+        
             // Loop sobre os termos para extrair os coeficientes
             for (let termo of termos) {
                 if (termo.includes("x^2")) {
                     // Coeficiente do termo quadrático (ax^2)
-                    a += parseInt(termo);
+                    if (termo === "x^2") {
+                        a += 1;
+                    } else if (termo === "-x^2") {
+                        a += -1;
+                    } else {
+                        a += parseFloat(termo.replace("x^2", ""));
+                    }
                 } else if (termo.includes("x")) {
                     // Coeficiente do termo linear (bx)
-                    b += parseInt(termo);
+                    const coeficiente = parseFloat(termo.replace("x", ""));
+                    b += (termo.includes("-")) ? -coeficiente : coeficiente;
                 } else {
                     // Termo constante (c)
-                    c += parseInt(termo);
+                    c += parseFloat(termo);
                 }
             }
-
+        
             return { a, b, c };
         }
+        
+        
 
         function calcularDiscriminante(a, b, c) {
             return Math.pow(b, 2) - 4 * a * c;
