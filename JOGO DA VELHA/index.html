@@ -8,12 +8,28 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>Jogo da Velha</h1>
-        <div id="board" class="board">
-            <!-- Os quadrados do jogo serão preenchidos aqui dinamicamente -->
+        <div class="game-and-score">
+
+            <div class="score">
+                <h2>Pontuação</h2>
+                <p id="playerXScore">Jogador X: 0</p>
+                <p id="playerOScore">Jogador O: 0</p>
+                
+            </div>
+
+            <div class="game">
+                <h1>Jogo da Velha</h1>
+                <div id="board" class="board"></div>
+                
+                <button id="reiniciar" onclick="resetGame()">Reiniciar Jogo</button>
+            </div>
+            
+
+            <div class="resultado">
+                <h3>Resultado:</h3>
+                <p id="result"></p>
+            </div>
         </div>
-        <p id="result"></p>
-        <button onclick="resetGame()">Reiniciar Jogo</button>
     </div>
     <script src="script.js"></script>
 </body>

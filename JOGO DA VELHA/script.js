@@ -7,8 +7,15 @@ let currentPlayer = "X";
 // Verifica se o jogo acabou
 let gameEnded = false;
 
+// Pontuação dos jogadores
+let playerXScore = 0;
+let playerOScore = 0;
+
 // Mapeamento dos índices dos quadrados do tabuleiro
 const squareIndices = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+
+// Variável para controlar se o jogador pode jogar
+let playerCanMove = true;
 
 // Inicializa o tabuleiro
 function initializeBoard() {
@@ -27,15 +34,17 @@ function initializeBoard() {
 
 // Faz uma jogada
 function makeMove(index) {
-    if (!gameEnded && board[index] === "") {
+    if (!gameEnded && board[index] === "" && playerCanMove) {
         board[index] = currentPlayer;
         renderBoard();
         checkWinner();
+        playerCanMove = false; // Impede que o jogador faça outra jogada
         if (!gameEnded) {
             setTimeout(() => {
                 makeComputerMove();
                 renderBoard();
                 checkWinner();
+                playerCanMove = true; // Permite que o jogador faça outra jogada
             }, 3000); // Atraso de 3 segundos
         }
     }
@@ -60,6 +69,7 @@ function checkWinner() {
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameEnded = true;
             document.getElementById("result").innerText = `Jogador ${board[a]} venceu!`;
+            updateScore(board[a]);
         }
     }
 
@@ -69,11 +79,23 @@ function checkWinner() {
     }
 }
 
+// Atualiza a pontuação do jogador vencedor
+function updateScore(winner) {
+    if (winner === "X") {
+        playerXScore++;
+        document.getElementById("playerXScore").innerText = `Jogador X: ${playerXScore}`;
+    } else if (winner === "O") {
+        playerOScore++;
+        document.getElementById("playerOScore").innerText = `Jogador O: ${playerOScore}`;
+    }
+}
+
 // Reinicia o jogo
 function resetGame() {
     board = ["", "", "", "", "", "", "", "", ""];
     currentPlayer = "X";
     gameEnded = false;
+    playerCanMove = true
     document.getElementById("result").innerText = "";
     renderBoard();
 }
@@ -92,3 +114,4 @@ window.onload = function () {
     initializeBoard();
     renderBoard();
 };
+
