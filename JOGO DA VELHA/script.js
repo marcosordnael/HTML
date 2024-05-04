@@ -8,9 +8,8 @@ let currentPlayer = "X";
 let gameEnded = false;
 
 // Mapeamento dos índices dos quadrados do tabuleiro
-const squareIndices = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+const squareIndices = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
-// Inicializa o tabuleiro
 // Inicializa o tabuleiro
 function initializeBoard() {
     const boardElement = document.getElementById("board");
@@ -26,20 +25,19 @@ function initializeBoard() {
     }
 }
 
-
-
-
 // Faz uma jogada
 function makeMove(index) {
     if (!gameEnded && board[index] === "") {
         board[index] = currentPlayer;
         renderBoard();
         checkWinner();
-        switchPlayer();
-        makeComputerMove();
-        renderBoard();
-        checkWinner();
-        switchPlayer();
+        if (!gameEnded) {
+            setTimeout(() => {
+                makeComputerMove();
+                renderBoard();
+                checkWinner();
+            }, 3000); // Atraso de 3 segundos
+        }
     }
 }
 
@@ -50,7 +48,7 @@ function makeComputerMove() {
         const emptySquares = board.reduce((acc, val, index) => (val === "" ? acc.concat(index) : acc), []);
         if (emptySquares.length > 0) {
             const randomIndex = emptySquares[Math.floor(Math.random() * emptySquares.length)];
-            board[randomIndex] = currentPlayer;
+            board[randomIndex] = currentPlayer === "X" ? "O" : "X";
         }
     }
 }
@@ -61,7 +59,7 @@ function checkWinner() {
         const [a, b, c] = indices;
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameEnded = true;
-            document.getElementById("result").innerText = `Jogador ${currentPlayer} venceu!`;
+            document.getElementById("result").innerText = `Jogador ${board[a]} venceu!`;
         }
     }
 
@@ -69,11 +67,6 @@ function checkWinner() {
         gameEnded = true;
         document.getElementById("result").innerText = "Empate!";
     }
-}
-
-// Alterna o jogador atual
-function switchPlayer() {
-    currentPlayer = currentPlayer === "X" ? "O" : "X";
 }
 
 // Reinicia o jogo
