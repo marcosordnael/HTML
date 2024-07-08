@@ -1,0 +1,99 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+    background-color: lightgray;
+}
+
+header {
+    background-color: rgb(151, 141, 141);
+
+}
+header > h1 {
+    color:black;
+    padding: 10px;
+    text-align: center;
+}
+#menu{
+    background-color: rgb(48,48,48);
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+#menuItens {
+    display: none;
+
+   
+}
+
+#menuItens  ul {
+    list-style-type: none;
+}
+
+#menuItens  a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    background-color: rgb(81, 81, 81);
+    color: white;
+    border: 2px solid gray;
+}
+
+#menuItens  a:hover {
+    background-color: gray;
+}
+
+main {
+    width: 90vw;
+    background-color: white;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+article h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+article p {
+    text-align: justify;
+    margin-bottom: 10px;
+    text-indent: 20px;
+}
+
+/**
+  * Arc
+  *
+  * @author jh3y - jheytompkins.com
+*/
+.arc:before {
+    -webkit-animation: spin 0.5s infinite linear;
+            animation: spin 0.5s infinite linear;
+    border-radius: 100%;
+    border-top: 6px solid var(--primary, #fff);
+    content: '';
+    display: block;
+    margin: 20px auto;
+    height: 50px;
+    width: 50px; }
+  
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg); } }
+  
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg); } }
